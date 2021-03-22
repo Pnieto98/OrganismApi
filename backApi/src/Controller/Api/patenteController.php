@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ApiPatenteController extends AbstractController
+class patenteController extends AbstractController
 {
     /**
      * @Route("/api/patente", name="api_patente")
@@ -15,7 +15,7 @@ class ApiPatenteController extends AbstractController
     {
         return $this->json([
             'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/ApiPatenteController.php',
+            'path' => 'src/Controller/Api/patenteController.php',
         ]);
     }
 }
