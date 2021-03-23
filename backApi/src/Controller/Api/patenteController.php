@@ -21,10 +21,11 @@ class patenteController extends AbstractController
             'body' => [
                 'id_usuario' => '991',
                 'id_organismo' => '83',
-                'password' => '71e017eb858d1c03dae87ba85db6dee6',
+                'qpassword' => '71e017eb858d1c03dae87ba85db6dee6',
                 'hash' => 'b75a6abbc3da3f23e453cace10f35d81'
             ]
         ]);
+        
         $solicitudPago = $client->request('POST', 'https://postsandbox.epagos.com.ar', [
             'body'=>[
                 'detalle_operación' => 'asdasd'
