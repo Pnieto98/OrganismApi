@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './Components/inicio/inicio.component';
 import { ComercioComponent } from './Components/comercio/comercio.component';
 import { CementerioComponent } from './Components/cementerio/cementerio.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CementerioComponent } from './Components/cementerio/cementerio.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

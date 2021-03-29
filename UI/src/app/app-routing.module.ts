@@ -4,6 +4,7 @@ import { CementerioComponent } from './Components/cementerio/cementerio.componen
 import { ComercioComponent } from './Components/comercio/comercio.component';
 import { InicioComponent } from './Components/inicio/inicio.component';
 
+
 const routes: Routes = [
   {
     path: 'inicio',
