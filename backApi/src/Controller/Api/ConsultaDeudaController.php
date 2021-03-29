@@ -16,16 +16,24 @@ class ConsultaDeudaController extends AbstractController
      * @Route("/api/consulta/{comercio}/{id}", 
      * name="api_consulta_deuda", methods={"GET"})
      */
-    public function Consulta($id, $comercio)
+    public function Consulta($comercio, $id)
     {
         $repositorio = $this->obtenerRopositorioTributo($comercio);
         $arrayDeuda = [];
         $response = new JsonResponse();
-        $consultaDeuda = $repositorio->findAll();
+        $consultaDeuda = $repositorio->findBy(
+            ["cuenta" => $id,
+             "estado" => 0]
+
+        );
         if ($consultaDeuda != null) {
             foreach ($consultaDeuda as $deuda) {
-                $arrayDeuda[] = [
-                    "id" => $deuda->getId()
+                $arrayDeuda [] = [
+                    "cuenta" => $deuda->getCuenta(),
+                    "saldo"=>$deuda->getSaldo(),
+                    "venicimiento"=>$deuda->getVencimiento(),
+                    "descripcion"=>$deuda->getDescripcion()
+
                 ];
             }
             $response->setData([
@@ -33,8 +41,13 @@ class ConsultaDeudaController extends AbstractController
                 "deuda" =>$arrayDeuda
             ]
             );
+        }else{
+            $response->setData([
+                "message" => false
+            ]);
         }
         return $response;
+        
     }
     private function obtenerRopositorioTributo($tributos)
     {

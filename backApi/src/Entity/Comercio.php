@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-use App\Entity\Contribuyentes;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +41,20 @@ class Comercio
      * @ORM\Column(name="estado", type="boolean", nullable=false)
      */
     private $estado = '0';
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="vencimiento", type="date", nullable=false)
+     */
+    private $vencimiento;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", length=65535, nullable=false)
+     */
+    private $descripcion;
 
     /**
      * @var \Contribuyentes
@@ -89,6 +103,30 @@ class Comercio
     public function setEstado(bool $estado): self
     {
         $this->estado = $estado;
+
+        return $this;
+    }
+
+    public function getVencimiento(): ?\DateTimeInterface
+    {
+        return $this->vencimiento;
+    }
+
+    public function setVencimiento(\DateTimeInterface $vencimiento): self
+    {
+        $this->vencimiento = $vencimiento;
+
+        return $this;
+    }
+
+    public function getDescripcion(): ?string
+    {
+        return $this->descripcion;
+    }
+
+    public function setDescripcion(string $descripcion): self
+    {
+        $this->descripcion = $descripcion;
 
         return $this;
     }

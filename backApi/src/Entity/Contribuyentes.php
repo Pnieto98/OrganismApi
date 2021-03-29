@@ -1,13 +1,13 @@
 <?php
 
-
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Contribuyentes
  *
- * @ORM\Table(name="Contribuyentes")
+ * @ORM\Table(name="contribuyentes")
  * @ORM\Entity
  */
 class Contribuyentes
