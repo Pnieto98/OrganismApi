@@ -32,7 +32,9 @@ class ConsultaDeudaController extends AbstractController
                     "cuenta" => $deuda->getCuenta(),
                     "saldo"=>$deuda->getSaldo(),
                     "venicimiento"=>$deuda->getVencimiento(),
-                    "descripcion"=>$deuda->getDescripcion()
+                    "descripcion"=>$deuda->getDescripcion(),
+                    "nombreContribuyente" => $deuda->getIdContribuyente()->getNombre(),
+                    "Dni" => $deuda->getIdContribuyente()->getDni()
 
                 ];
             }
