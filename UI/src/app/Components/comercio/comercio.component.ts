@@ -7,21 +7,12 @@ import { ObtenerDeudaService } from 'src/app/Service/api/obtener-deuda.service';
   styleUrls: ['./comercio.component.css']
 })
 export class ComercioComponent implements OnInit {
-  resultadoDeuda: any; 
-  nroCuenta: number;
-  constructor(private consultaApi: ObtenerDeudaService) { 
+  resultadoDatos: any;
+  constructor() { 
   }
   ngOnInit(): void {
   }
-  OnClick(){
-    this.consultaApi.getDeuda("comercio", this.nroCuenta)
-    .then((response) =>{
-      this.resultadoDeuda = {
-        message: response['message'],
-        deuda: response['deuda']
-      }
-      console.log(response);
-    })
-    .catch(error => console.log(error));
+  onObtenerResultados($event){ 
+    this.resultadoDatos = $event;
   }
 }

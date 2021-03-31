@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
+import { config } from 'rxjs';
+import { BuscarDeudaComponent } from 'src/app/Form/buscar-deuda/buscar-deuda.component';
+
 
 
 
@@ -12,10 +15,9 @@ export class ResultadosDeudaComponent  implements OnInit {
   nroCuenta: number;
   datos: number;
   constructor() { 
-    this.resultadoDeuda;
+
   }
 
-  ngOnInit(): void {
-    console.log(this.resultadoDeuda);
+  ngOnInit() {
   }
 }

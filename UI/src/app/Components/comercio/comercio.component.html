@@ -1,12 +1,9 @@
 <h1 class="text-center">Tasa de Comercio</h1>
-<div class="wrap-form-consulta text-center">
-  <div class="d-inline">
-    <label for="">Ingresar Cuenta: </label>
-    <input type="number" [(ngModel)]="nroCuenta" required>
-    <button class="btn btn-info" (click)="OnClick()">Consultar deuda</button>
-  </div>
-  <hr>
-  <!--RESULTADO DE LA DEUDA CARGADA-->
-  <app-resultados-deuda [resultadoDeuda]="resultadoDeuda"></app-resultados-deuda>
-  <!-- FIN RESULTADO -->
-</div>
+
+<!--- FORMULARIO PARA BUSCAR LA DEUDA -->
+<app-buscar-deuda (enviarDatos)="onObtenerResultados($event)"></app-buscar-deuda>
+<!-- FIN FORMULARIO-->
+
+<!--RESULTADO DE LA DEUDA CARGADA-->  
+<app-resultados-deuda [resultadoDeuda]="resultadoDatos"></app-resultados-deuda>
+<!-- FIN RESULTADO -->
