@@ -9,6 +9,7 @@ import { InicioComponent } from './Components/inicio/inicio.component';
 import { ComercioComponent } from './Components/comercio/comercio.component';
 import { CementerioComponent } from './Components/cementerio/cementerio.component';
 import { FormsModule } from '@angular/forms';
+import { ResultadosDeudaComponent } from './Components/resultados-deuda/resultados-deuda.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     InicioComponent,
     ComercioComponent,
-    CementerioComponent
+    CementerioComponent,
+    ResultadosDeudaComponent
   ],
   imports: [
     BrowserModule,

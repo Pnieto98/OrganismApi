@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { EpagosApiService } from 'src/app/Service/epagos-api.service';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { ObtenerDeudaService } from 'src/app/Service/api/obtener-deuda.service';
 
 @Component({
   selector: 'app-comercio',
@@ -7,34 +7,21 @@ import { EpagosApiService } from 'src/app/Service/epagos-api.service';
   styleUrls: ['./comercio.component.css']
 })
 export class ComercioComponent implements OnInit {
-  arrayDatos: any[];
-  respuestaError: boolean; 
+  resultadoDeuda: any; 
   nroCuenta: number;
-  tipoTributo: string;
-  dniContribuyente: number;
-  nombreContribuyente: string;
-  constructor(private consultaApi: EpagosApiService) { 
-    this.arrayDatos = [];
-    this.respuestaError = false;
-    this.nroCuenta = 0;
-    this.tipoTributo = "comercio"
-    this.dniContribuyente = 0;
+  constructor(private consultaApi: ObtenerDeudaService) { 
   }
-
   ngOnInit(): void {
   }
   OnClick(){
     this.consultaApi.getDeuda("comercio", this.nroCuenta)
     .then((response) =>{
-      if(response['message'] == true){
-        this.respuestaError = false;
-        this.arrayDatos = response['deuda']        
-      }else{
-        this.arrayDatos = [];
-        this.respuestaError = true;
+      this.resultadoDeuda = {
+        message: response['message'],
+        deuda: response['deuda']
       }
+      console.log(response);
     })
     .catch(error => console.log(error));
   }
-
 }

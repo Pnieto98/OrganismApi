@@ -52,6 +52,7 @@ body::after{
 }
 table{
     background: white;
+    box-shadow: 1px 1px 10px grey;
 }
 table td button{
     box-shadow: 1px 1px 15px grey;
