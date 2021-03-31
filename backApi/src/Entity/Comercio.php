@@ -29,11 +29,18 @@ class Comercio
     private $cuenta;
 
     /**
-     * @var int
+     * @var float
      *
-     * @ORM\Column(name="saldo", type="integer", nullable=false)
+     * @ORM\Column(name="saldo", type="float", precision=10, scale=0, nullable=false)
      */
     private $saldo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="periodo", type="string", length=10, nullable=false)
+     */
+    private $periodo;
 
     /**
      * @var bool
@@ -83,14 +90,26 @@ class Comercio
         return $this;
     }
 
-    public function getSaldo(): ?int
+    public function getSaldo(): ?float
     {
         return $this->saldo;
     }
 
-    public function setSaldo(int $saldo): self
+    public function setSaldo(float $saldo): self
     {
         $this->saldo = $saldo;
+
+        return $this;
+    }
+
+    public function getPeriodo(): ?string
+    {
+        return $this->periodo;
+    }
+
+    public function setPeriodo(string $periodo): self
+    {
+        $this->periodo = $periodo;
 
         return $this;
     }

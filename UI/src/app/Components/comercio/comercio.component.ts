@@ -10,6 +10,7 @@ export class ComercioComponent implements OnInit {
   resultadoDeuda: any; 
   nroCuenta: number;
   constructor(private consultaApi: ObtenerDeudaService) { 
+
   }
   ngOnInit(): void {
   }
