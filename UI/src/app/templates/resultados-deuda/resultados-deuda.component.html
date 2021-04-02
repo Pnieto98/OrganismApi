@@ -1,0 +1,59 @@
+<div class="" *ngIf="resultadoDeuda != null">
+  <div class="resultados" *ngIf="resultadoDeuda.message">
+    <div class="datos-contribuyente">
+      <div class="card-datos d-inline">
+        <span>Contribuyente</span>
+        <p class="d-inline">{{resultadoDeuda.deuda[0].nombreContribuyente}}</p>
+      </div>
+      <div class="card-datos d-inline">
+        <span>Dni</span>
+        <p class="d-inline">{{resultadoDeuda.deuda[0].dni}}</p>
+      </div>
+      <div class="card-datos d-inline">
+        <span>Cuenta</span>
+        <p class="d-inline">{{resultadoDeuda.deuda[0].cuenta}}</p>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center">
+          <th class="cole">Periodo</th>
+          <th class="cole">Descripcion</th>
+          <th class="cole">Vencimiento</th>
+          <th class="cole">Saldo</th>
+          <th class="cole">Medio de pago</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let deuda of resultadoDeuda.deuda" class="text-center">
+          <th scope="row">{{deuda.periodo}}</th>
+          <td>{{deuda.descripcion | uppercase}}</td>  
+          <td>{{deuda['venicimiento'].date | date}}</td>
+          <td>{{deuda.saldo}}</td>
+          <td><input type="checkbox"class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)" ></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-striped text-center">
+      <thead>
+        <tr class="text-center">
+          <th class="cole">Concepto</th>
+          <th class="cole">Importe</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let deuda of mostrarSeleccion" class="text-center">
+          <th scope="row">{{deuda.descripcion | uppercase}}</th>
+          <td>{{deuda.saldo}}</td>  
+        </tr>
+        <tr>
+          <td><Button class="btn btn-success">Pagar</Button></td>
+          <td class="badge bg-success">Total: {{totalSeleccion}}</td> 
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-danger" *ngIf="!resultadoDeuda.message">
+    Error, no se ha podido encontrar el numero de cuenta ingresado.
+  </div>
+</div>
