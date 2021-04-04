@@ -30,8 +30,7 @@ export class ResultadosDeudaComponent  implements OnInit {
       this.totalSeleccion+=obj.saldo;
     }else{
       let element = this.mostrarSeleccion.indexOf(obj)
-      this.mostrarSeleccion.splice(element, 1);
-      
+      this.mostrarSeleccion.splice(element, 1); 
       this.totalSeleccion-=obj.saldo;
     }
   }

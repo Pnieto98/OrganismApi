@@ -1,3 +1,4 @@
+
 <div class="" *ngIf="resultadoDeuda != null">
   <div class="resultados" *ngIf="resultadoDeuda.message">
     <div class="datos-contribuyente">
@@ -27,28 +28,28 @@
       <tbody>
         <tr *ngFor="let deuda of resultadoDeuda.deuda" class="text-center">
           <th scope="row">{{deuda.periodo}}</th>
-          <td>{{deuda.descripcion | uppercase}}</td>  
+          <td>{{deuda.descripcion | uppercase}}</td>
           <td>{{deuda['venicimiento'].date | date}}</td>
           <td>{{deuda.saldo}}</td>
-          <td><input type="checkbox"class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)" ></td>
+          <td><input type="checkbox" class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)"></td>
         </tr>
       </tbody>
     </table>
-    <table class="table table-striped text-center">
+    <table class="table table-striped text-center" *ngIf="mostrarSeleccion.length > 0">
       <thead>
         <tr class="text-center">
-          <th class="cole">Concepto</th>
+          <th class="cole">Seleccionados</th>
           <th class="cole">Importe</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let deuda of mostrarSeleccion" class="text-center">
           <th scope="row">{{deuda.descripcion | uppercase}}</th>
-          <td>{{deuda.saldo}}</td>  
+          <td>{{deuda.saldo}}</td>
         </tr>
         <tr>
           <td><Button class="btn btn-success">Pagar</Button></td>
-          <td class="badge bg-success">Total: {{totalSeleccion}}</td> 
+          <td class="badge bg-success">Total: {{totalSeleccion}}</td>
         </tr>
       </tbody>
     </table>
