@@ -1,9 +1,7 @@
 import { ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
 import { config } from 'rxjs';
 import { BuscarDeudaComponent } from 'src/app/Form/buscar-deuda/buscar-deuda.component';
-
-
-
+import { DeudaSeleccionadaService } from 'src/app/Service/deuda-seleccionada.service';
 
 @Component({
   selector: 'app-resultados-deuda',
@@ -12,26 +10,18 @@ import { BuscarDeudaComponent } from 'src/app/Form/buscar-deuda/buscar-deuda.com
 })
 export class ResultadosDeudaComponent  implements OnInit {
   @Input() resultadoDeuda: any;
-  totalSeleccion
-  mostrarSeleccion: any[];
-  nroCuenta: number;
-  datos: number;
   isChecked: boolean;
-  constructor() { 
-    this.mostrarSeleccion = [];
-    this.totalSeleccion = 0;
+  constructor(private deudaSelec: DeudaSeleccionadaService) { 
   }
   ngOnInit() {
   }
   eventCheck(obj, $event){
+    this.deudaSelec.arraySeleccionado;
     this.isChecked = $event.target.checked;
     if(this.isChecked){
-      this.mostrarSeleccion.push(obj);
-      this.totalSeleccion+=obj.saldo;
+      this.deudaSelec.agregar(obj);
     }else{
-      let element = this.mostrarSeleccion.indexOf(obj)
-      this.mostrarSeleccion.splice(element, 1); 
-      this.totalSeleccion-=obj.saldo;
+      this.deudaSelec.borrar(obj);
     }
   }
 }
