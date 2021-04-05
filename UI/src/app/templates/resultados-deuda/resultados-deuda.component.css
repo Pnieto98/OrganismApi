@@ -30,3 +30,37 @@ table{
 table td button{
     box-shadow: 1px 1px 15px grey;
 }
+.deudaSeleccionada  {
+    
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(179, 175, 175);
+    align-items: center;
+    align-self: center;
+}
+.deudaSeleccionada p{
+    padding: 6px;
+    margin: 0!important;
+}
+.btn-epagos{
+    box-shadow: 1px 1px 10px grey;
+    border: 4px;
+    font-weight: bold;
+}
+.total-deuda{
+    text-transform: uppercase;
+    color: green;
+    font-size: 1.7rem;
+}
+.conteiner-seleccionados{
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 5px;
+    box-shadow: 1px 1px 10px grey;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
