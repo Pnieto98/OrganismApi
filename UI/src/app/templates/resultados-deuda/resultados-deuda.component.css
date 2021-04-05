@@ -64,3 +64,6 @@ table td button{
     padding: 5px;
     border-radius: 5px;
 }
+.container-epagos{
+    box-shadow: 1px 2px 10px black;
+}

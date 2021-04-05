@@ -44,12 +44,14 @@
         <p>Total</p>
         <p>${{deudaSelec.sumarTotales}}</p> 
       </div>
-      <div class="text-center mt-2">
-        <button class="btn-epagos">Epagos <img src="https://i.imgur.com/2cgisfp.png" width="40px" height="40px"></button>
+      <div class="text-center mt-2" (click)="onClick()">
+        <button class="btn-epagos" >Epagos <img src="https://i.imgur.com/2cgisfp.png" width="40px" height="40px"></button>
       </div>
     </div>
   </div>
   <div class="alert alert-danger" *ngIf="!resultadoDeuda.message">
     Error, no se ha podido encontrar el numero de cuenta ingresado.
+  </div>
+  <div class="container-epagos mt-3">
   </div>
 </div>
