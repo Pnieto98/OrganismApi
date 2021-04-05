@@ -1,6 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit, ViewChild} from '@angular/core';
-import { config } from 'rxjs';
-import { BuscarDeudaComponent } from 'src/app/Form/buscar-deuda/buscar-deuda.component';
+import {Component, Input, OnInit} from '@angular/core';
 import { DeudaSeleccionadaService } from 'src/app/Service/deuda-seleccionada.service';
 
 @Component({
@@ -23,5 +21,8 @@ export class ResultadosDeudaComponent  implements OnInit {
     }else{
       this.deudaSelec.borrar(obj);
     }
+  }
+  pagar(){
+    console.log(this.deudaSelec.arraySeleccionado);
   }
 }

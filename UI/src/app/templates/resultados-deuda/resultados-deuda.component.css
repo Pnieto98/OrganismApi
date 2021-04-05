@@ -27,9 +27,6 @@ table{
     background: white;
     box-shadow: 1px 1px 10px grey   ;
 }
-table td button{
-    box-shadow: 1px 1px 15px grey;
-}
 .deudaSeleccionada  {
     
     display: flex;
@@ -49,6 +46,11 @@ table td button{
     box-shadow: 1px 1px 10px grey;
     border: 4px;
     font-weight: bold;
+    transition: all .3s ease-in;
+}
+.btn-epagos:hover {
+    transform: scale(1.1);
+    border: 1px solid red;
 }
 .total-deuda{
     text-transform: uppercase;

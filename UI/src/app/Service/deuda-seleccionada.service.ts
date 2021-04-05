@@ -8,6 +8,7 @@ export class DeudaSeleccionadaService {
   sumarTotales: number;
   constructor() { 
     this.arraySeleccionado = [];
+    this.sumarTotales = 0;
   }
   agregar(obj: any){
     this.arraySeleccionado.push(obj);
