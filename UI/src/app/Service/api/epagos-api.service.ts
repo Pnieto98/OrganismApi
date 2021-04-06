@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,15 @@ import { Injectable } from '@angular/core';
 export class EpagosApiService {
   baseUrl: string  ;
   constructor(private http: HttpClient) {
-    this.baseUrl =  "http://127.0.0.1:8000/api/consulta";
+    this.baseUrl =  "http://127.0.0.1:8000/api/pago/deuda";
    }
-   getDeuda(tipoTributo, idContribuyente): Promise <any []>
+   iniciarSolicitud()
    {
-     return this.http.get<any[]>(`${this.baseUrl}/${tipoTributo}/${idContribuyente}`).toPromise();
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'text/html'
+      })
+    };
+    return this.http.post(this.baseUrl, {}, httpOptions);
    }
 }
