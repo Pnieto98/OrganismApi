@@ -29,7 +29,7 @@ export class ResultadosDeudaComponent implements OnInit {
      version : "2.0",
      operacion: "op_pago",
      id_organismo: "37",
-     token: "c0d682c02f9072d1f75e408512c3b687",
+     token: "af4251381271ba2310fdda689cfc8aeb",
      convenio: "",
      numero_operacion: "123123",
      id_moneda_operacion: "1",
@@ -57,7 +57,7 @@ export class ResultadosDeudaComponent implements OnInit {
     iframe.frameBorder="0";
     iframe.src = "";
     iframe.style.width = "100%";
-    iframe.style.height = "500px";
+    iframe.style.height = "700px";
     contEpago.appendChild(iframe);
     document.body.appendChild(form);
     form.submit();  

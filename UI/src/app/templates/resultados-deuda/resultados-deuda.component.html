@@ -35,6 +35,8 @@
         </tr>
       </tbody>
     </table>
+    <div class="container-epagos mt-3 mb-3">
+    </div>
     <div class="conteiner-seleccionados"  *ngIf="deudaSelec.arraySeleccionado.length > 0">
       <div class="deudaSeleccionada detalles-deuda align-center" *ngFor="let deuda of deudaSelec.arraySeleccionado" >
         <p>{{deuda.descripcion | uppercase}}</p>
@@ -52,6 +54,5 @@
   <div class="alert alert-danger" *ngIf="!resultadoDeuda.message">
     Error, no se ha podido encontrar el numero de cuenta ingresado.
   </div>
-  <div class="container-epagos mt-3">
-  </div>
+
 </div>
