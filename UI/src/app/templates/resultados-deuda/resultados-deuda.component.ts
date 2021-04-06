@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import {Component, Input, OnInit} from '@angular/core';
-import { DeudaSeleccionadaService } from 'src/app/Service/deuda-seleccionada.service';
-=======
->>>>>>> epagosCheckout
 
 import { Component, Input, OnInit } from '@angular/core';
 import { EpagosApiService } from 'src/app/Service/api/epagos-api.service';
@@ -29,10 +24,6 @@ export class ResultadosDeudaComponent implements OnInit {
       this.deudaSelec.borrar(obj);
     }
   }
-<<<<<<< HEAD
-  pagar(){
-    console.log(this.deudaSelec.arraySeleccionado);
-=======
   onClick() {
    let datosPago = {
      version : "2.0",
@@ -70,6 +61,5 @@ export class ResultadosDeudaComponent implements OnInit {
     contEpago.appendChild(iframe);
     document.body.appendChild(form);
     form.submit();  
->>>>>>> epagosCheckout
   }
 }
