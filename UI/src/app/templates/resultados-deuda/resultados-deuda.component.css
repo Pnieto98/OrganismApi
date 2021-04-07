@@ -52,20 +52,4 @@ table{
     transform: scale(1.1);
     border: 1px solid red;
 }
-.total-deuda{
-    text-transform: uppercase;
-    color: green;
-    font-size: 1.7rem;
-}
-.conteiner-seleccionados{
-    max-width: 60%;
-    margin: 0 auto;
-    margin-top: 5px;
-    box-shadow: 1px 1px 10px grey;
-    background-color: white;
-    padding: 5px;
-    border-radius: 5px;
-}
-.container-epagos{
-    box-shadow: 1px 2px 10px black;
-}
+

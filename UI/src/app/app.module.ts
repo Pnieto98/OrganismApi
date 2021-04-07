@@ -10,6 +10,7 @@ import { CementerioComponent } from './Components/cementerio/cementerio.componen
 import { FormsModule } from '@angular/forms';
 import { ResultadosDeudaComponent } from './templates/resultados-deuda/resultados-deuda.component';
 import { BuscarDeudaComponent } from './Form/buscar-deuda/buscar-deuda.component';
+import { FooterComponent } from './templates/footer/footer.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { BuscarDeudaComponent } from './Form/buscar-deuda/buscar-deuda.component
     ComercioComponent,
     CementerioComponent,
     ResultadosDeudaComponent,
-    BuscarDeudaComponent
+    BuscarDeudaComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,6 @@ import { BuscarDeudaComponent } from './Form/buscar-deuda/buscar-deuda.component
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, FooterComponent]
 })
 export class AppModule { }

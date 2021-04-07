@@ -4,15 +4,13 @@
     <div class="d-inline text-left form-buscador">
       <label for="" class="d-block  font-weigth-bold">Numero de cuenta </label>
       <input type="number" [(ngModel)]="nroCuenta" required class="d-block">
-      <button class="btn btn-info text-uppercase py-2 m-2" (click)="OnClick()">Consultar deuda</button>
+      <button class="btn btn-warning text-uppercase py-2 m-2" (click)="OnClick()">Consultar</button>
     </div>
   </div>
-  <div class="overlay" [ngClass]="{displaySpinner: (activarSpinner == true) }">
-  </div>
+  <hr>
   <div class="text-center" [ngClass]="{displaySpinner: (activarSpinner == true) }">
     <div class="spinner-border text-primary display-4" role="status" style="width: 4rem; height: 4rem;">
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-  <hr>
 </div>

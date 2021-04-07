@@ -33,21 +33,16 @@
           <td>{{deuda['venicimiento'].date | date}}</td>
           <td>{{deuda.saldo}}</td>
         </tr>
+        <tr class="text-center">
+          <td class="label label-success">Total: ${{deudaSelec.sumarTotales}}</td>
+        </tr>
       </tbody>
     </table>
     <div class="container-epagos mt-3 mb-3">
     </div>
     <div class="conteiner-seleccionados"  *ngIf="deudaSelec.arraySeleccionado.length > 0">
-      <div class="deudaSeleccionada detalles-deuda align-center" *ngFor="let deuda of deudaSelec.arraySeleccionado" >
-        <p>{{deuda.descripcion | uppercase}}</p>
-        <p>${{deuda.saldo}}</p>
-      </div>
-      <div class="deudaSeleccionada total-deuda"  >
-        <p>Total</p>
-        <p>${{deudaSelec.sumarTotales}}</p> 
-      </div>
-      <div class="text-center mt-2" (click)="onClick()">
-        <button class="btn-epagos" >Epagos <img src="https://i.imgur.com/2cgisfp.png" width="40px" height="40px"></button>
+      <div class="text-center mt-2" (click)="enviarPago()">
+        <button class="btn btn-danger" >Epagos <img src="https://i.imgur.com/2cgisfp.png" width="40px" height="40px"></button>
       </div>
     </div>
   </div>
