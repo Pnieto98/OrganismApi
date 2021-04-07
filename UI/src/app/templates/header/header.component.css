@@ -1,31 +1,40 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
+.header{
+    background-image: url();
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   box-shadow: 0px 1px 2px rgb(216, 216, 216);
-  padding: 0!important;
+  padding: 0 !important;
 }
-.navbar nav{
-    align-items: center;
+
+.navbar nav {
+  align-items: center;
 }
+
 .navbar nav a {
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    margin-right: 16px;
-    padding: 10px 5px;
-    transition: .3s all ease-in;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  margin-right: 16px;
+  padding: 10px 5px;
+  transition: .3s all ease-in;
 }
-.activo{
-    border-bottom: 4px solid black;
+
+.activo {
+  border-bottom: 4px solid black;
 }
+
 .navbar nav a:hover {
-    color: red;
+  color: red;
 }
+
 .navbar nav a svg {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
-.navbar nav a  span{
-    display: block;
-    font-size: .8rem;
+
+.navbar nav a span {
+  display: block;
+  font-size: .8rem;
 }

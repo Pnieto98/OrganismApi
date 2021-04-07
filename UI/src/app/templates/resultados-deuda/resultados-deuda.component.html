@@ -18,20 +18,20 @@
     <table class="table table-striped">
       <thead>
         <tr class="text-center">
+          <th></th>
           <th class="cole">Periodo</th>
           <th class="cole">Descripcion</th>
           <th class="cole">Vencimiento</th>
           <th class="cole">Saldo</th>
-          <th class="cole">Medio de pago</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let deuda of resultadoDeuda.deuda" class="text-center">
+          <td><input type="checkbox" class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)"></td>
           <th scope="row">{{deuda.periodo}}</th>
           <td>{{deuda.descripcion | uppercase}}</td>
           <td>{{deuda['venicimiento'].date | date}}</td>
           <td>{{deuda.saldo}}</td>
-          <td><input type="checkbox" class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)"></td>
         </tr>
       </tbody>
     </table>

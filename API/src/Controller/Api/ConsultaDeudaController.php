@@ -31,7 +31,7 @@ class ConsultaDeudaController extends AbstractController
                 $arrayDeuda [] = [
                     "cuenta" => $deuda->getCuenta(),
                     "saldo"=>$deuda->getSaldo(),
-                    "periodo"=>$deuda->getPeriodo(),
+                    "periodo"=>date("d-m-Y", strtotime($deuda->getPeriodo())),
                     "venicimiento"=>$deuda->getVencimiento(),
                     "descripcion"=>$deuda->getDescripcion(),
                     "nombreContribuyente" => $deuda->getIdContribuyente()->getNombre(),
