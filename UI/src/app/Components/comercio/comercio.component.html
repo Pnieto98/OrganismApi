@@ -1,11 +1,17 @@
 <div class="text-lefl">
-<h3 class="text-uppercase ">Tasa de Comercio</h3>
-<p>Accedé a información sobre las tasas de comercio pendientes de pago, en la Ciudad de Buenos Aires.</p>
+  <nav aria-label="breadcrumb ">
+    <ol class="breadcrumb bg-white">
+      <li class="breadcrumb-item"><a [routerLink]="['/inicio']">Tributos</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Comercio</li>
+    </ol>
+  </nav>
+  <h3 class="text-uppercase ">Tasa de Comercio</h3>
+  <p>Accedé a información sobre las tasas de comercio pendientes de pago, en la Ciudad de Buenos Aires.</p>
 </div>
 <!--- FORMULARIO PARA BUSCAR LA DEUDA -->
 <app-buscar-deuda (enviarDatos)="onObtenerResultados($event)"></app-buscar-deuda>
 <!-- FIN FORMULARIO-->
 
-<!--RESULTADO DE LA DEUDA CARGADA-->  
+<!--RESULTADO DE LA DEUDA CARGADA-->
 <app-resultados-deuda [resultadoDeuda]="resultadoDatos"></app-resultados-deuda>
 <!-- FIN RESULTADO -->
