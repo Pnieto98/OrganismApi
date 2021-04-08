@@ -29,7 +29,7 @@ export class BuscarDeudaComponent implements OnInit {
     this.activarSpinner = false;
     this.consultaApi
       .getDeuda('comercio', this.nroCuenta)
-      .then((response) => {
+      .subscribe((response) => {
         this.activarSpinner = true;
         this.resultadoDeuda = {
           message: response['message'],
@@ -37,6 +37,5 @@ export class BuscarDeudaComponent implements OnInit {
         };
         this.enviarDatos.emit(this.resultadoDeuda);
       })
-      .catch((error) => console.log(error));
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class ObtenerDeudaService {
    *         °El tipo de atributo, ejemplo: "Comercio"o "Patente"
    *         °El id con el cual se le identifica al contribuyente, ejemplo: "312ac" o "2451"
    */
-   getDeuda(tipoTributo, idContribuyente): Promise <any []>
+   getDeuda(tipoTributo, idContribuyente): Observable <any []>
    {
-     return this.http.get<any[]>(`${this.baseUrl}/${tipoTributo}/${idContribuyente}`).toPromise();
+     return this.http.get<any []>(`${this.baseUrl}/${tipoTributo}/${idContribuyente}`);
    }
 
 }

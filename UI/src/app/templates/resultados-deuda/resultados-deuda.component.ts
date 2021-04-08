@@ -23,7 +23,6 @@ export class ResultadosDeudaComponent implements OnInit {
     } else {
       this.deudaSelec.borrar(obj);
     }
-    console.log(encodeURIComponent(JSON.stringify(this.deudaSelec.arraySeleccionado)))
   }
   enviarPago(){
     this.epagosService.iniciarSolicitud(this.deudaSelec.arraySeleccionado)
