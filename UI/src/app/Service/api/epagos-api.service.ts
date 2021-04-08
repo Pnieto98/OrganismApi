@@ -17,6 +17,6 @@ export class EpagosApiService {
         'Content-Type':  'text/html'
       })
     };
-    return this.http.post<any>(this.baseUrl, body,httpOptions).toPromise();
+    return this.http.post<any>(this.baseUrl, body, httpOptions).toPromise();
    }
 }
