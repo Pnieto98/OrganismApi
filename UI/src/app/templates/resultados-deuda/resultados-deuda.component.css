@@ -52,6 +52,6 @@ table{
     border-radius: 4px;
 }
 .btn-epagos:hover {
-    transform: scale(1.2);
+    box-shadow: 1px -1px 10px grey;
 }
 
