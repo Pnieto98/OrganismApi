@@ -1,6 +1,6 @@
-
 <div class="" *ngIf="resultadoDeuda != null">
   <div class="resultados" *ngIf="resultadoDeuda.message">
+    <!-- DATOS DEL CONTRIBUYENTE -->
     <div class="datos-contribuyente">
       <div class="card-datos d-inline">
         <span>Contribuyente</span>
@@ -15,38 +15,70 @@
         <p class="d-inline">{{resultadoDeuda.deuda[0].cuenta}}</p>
       </div>
     </div>
-    <table class="table table-striped">
-      <thead>
-        <tr class="text-center">
-          <th></th>
-          <th class="cole">Periodo</th>
-          <th class="cole">Descripcion</th>
-          <th class="cole">Vencimiento</th>
-          <th class="cole">Saldo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let deuda of resultadoDeuda.deuda" class="text-center">
-          <td><input type="checkbox" class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)"></td>
-          <th scope="row">{{deuda.periodo}}</th>
-          <td>{{deuda.descripcion | uppercase}}</td>
-          <td>{{deuda['venicimiento'].date | date}}</td>
-          <td>{{deuda.saldo}}</td>
-        </tr>
-        <tr class="text-center">
-          <td class="label label-success">Total: ${{deudaSelec.sumarTotales}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="container-epagos mt-3 mb-3">
-    </div>
-    <div class="conteiner-seleccionados"  *ngIf="deudaSelec.arraySeleccionado.length > 0">
-      <div class="text-center mt-2" (click)="enviarPago()">
-        <button class="btn-epagos" > <img src="https://i.imgur.com/GJ9a7Zy.png" width="100px" height="40px"></button>
-      </div>
+    <!-- FIN DATOS DEL COTRIBUYENTE -->
+
+    <div class="row justify-content-around">
+      <!-- TABLA PARA MOSTRAR  LA DEUDA DEL CONTRIBUYENTE -->
+      <table class="table table-striped col-7 ">
+        <thead>
+          <tr class="text-center">
+            <th></th>
+            <th class="cole">Periodo</th>
+            <th class="cole">Descripcion</th>
+            <th class="cole">Vencimiento</th>
+            <th class="cole">Saldo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let deuda of resultadoDeuda.deuda" class="text-center">
+            <td><input type="checkbox" class="text-center" [checked]="checkbox" (change)="eventCheck(deuda, $event)">
+            </td>
+            <th scope="row">{{deuda.periodo}}</th>
+            <td>{{deuda.descripcion | uppercase}}</td>
+            <td>{{deuda['venicimiento'].date | date}}</td>
+            <td>{{deuda.saldo}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!--FIN TABLA DE DEUDA CARGADA-->
+
+      <!-- TABLA PARA MOSTRAR EL TOTAL DE LA DEUDA SELECCIONADA -->
+      <table class="table table-seleccion col-4">
+        <thead>
+          <tr class="table-warning text-center">
+            <th>IMPORTE TOTAL SELECCIONADO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="d-flex justify-content-around font-weight-bold">
+              <span>Total</span>
+              <span>${{deudaSelec.sumarTotales}}</span>
+            </td>
+          <tr *ngIf="deudaSelec.arraySeleccionado.length > 0">
+            <td class="text-center">
+              <button (click)="enviarPago()" class="btn btn-warning font-weight-bold  text-uppercase ">
+                <div *ngIf="redireccionar == false" class="align-items-center">
+                  Redireccionando Epagos
+                  <div class="spinner-border text-info" role="status" style="width: 1.5rem; height: 1.5rem;">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+                <div *ngIf="redireccionar == true">
+                  Pagar
+                  <i class="fas fa-money-bill-wave" *ngIf="redireccionar == true"></i>
+                </div>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- FIN TABLA DE DEUDA SELECCIONADA-->
     </div>
   </div>
+  <!-- MOSTRAR ALERT AL NO ENCUENTRAR UN NUMERO DE CUENTA -->
   <div class="alert alert-danger" *ngIf="!resultadoDeuda.message">
     Error, no se ha podido encontrar el numero de cuenta ingresado.
   </div>
+  <!-- FIN ALERT-->
 </div>

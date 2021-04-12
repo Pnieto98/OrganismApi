@@ -9,11 +9,15 @@ import { DeudaSeleccionadaService } from 'src/app/Service/deuda-seleccionada.ser
 export class ResultadosDeudaComponent implements OnInit {
   @Input() resultadoDeuda: any;
   isChecked: boolean;
+  redireccionar: boolean;
   constructor(
     private deudaSelec: DeudaSeleccionadaService,
     private epagosService: EpagosApiService
-  ) {}
+  ) {
+    this.redireccionar = true;
+  }
   ngOnInit() {}
+
   eventCheck(obj, $event) {
     this.deudaSelec.arraySeleccionado;
     this.isChecked = $event.target.checked;
@@ -24,6 +28,7 @@ export class ResultadosDeudaComponent implements OnInit {
     }
   }
   enviarPago() {
+    this.redireccionar = false;
     this.epagosService
       .iniciarSolicitud(this.deudaSelec.arraySeleccionado)
       .then((datos) => this.realizarPago(datos))

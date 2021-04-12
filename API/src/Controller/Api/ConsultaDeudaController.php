@@ -29,7 +29,7 @@ class ConsultaDeudaController extends AbstractController
         if ($consultaDeuda != null) {
             foreach ($consultaDeuda as $deuda) {
                 $arrayDeuda [] = [
-                    "id" => $deuda->getId(),
+                    "id" => $deuda->getId(), 
                     "cuenta" => $deuda->getCuenta(),
                     "saldo"=>$deuda->getSaldo(),
                     "periodo"=>date("d-m-Y", strtotime($deuda->getPeriodo())),

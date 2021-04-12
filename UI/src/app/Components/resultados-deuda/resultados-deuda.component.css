@@ -25,7 +25,7 @@
 }
 table{
     background: white;
-    box-shadow: 1px 1px 10px grey   ;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .deudaSeleccionada  {
     
@@ -54,4 +54,6 @@ table{
 .btn-epagos:hover {
     box-shadow: 1px -1px 10px grey;
 }
-
+.table-seleccion tr td span{
+    font-size: 1.2rem;
+}
