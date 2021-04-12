@@ -44,8 +44,8 @@ export class ResultadosDeudaComponent implements OnInit {
       numero_operacion: datos.token,
       id_moneda_operacion: '1',
       monto_operacion: datos.saldo,
-      detalle_operacion: '',
-      detalle_operacion_visible: '0',
+      detalle_operacion: datos.detalle_operacion,
+      detalle_operacion_visible: '1',
       ok_url: 'https://postsandbox.epagos.com.ar/tests/ok.php',
       error_url: 'https://postsandbox.epagos.com.ar/tests/error.php',
     };
