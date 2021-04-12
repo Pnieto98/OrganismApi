@@ -49,6 +49,10 @@ export class ResultadosDeudaComponent implements OnInit {
       ok_url: 'https://postsandbox.epagos.com.ar/tests/ok.php',
       error_url: 'https://postsandbox.epagos.com.ar/tests/error.php',
     };
+    this.crearFormulario(datosPago);
+    
+  }
+  private crearFormulario(datosPago){
     let form = document.createElement('form');
     form.method = 'POST';
     form.action = 'https://postsandbox.epagos.com.ar';
