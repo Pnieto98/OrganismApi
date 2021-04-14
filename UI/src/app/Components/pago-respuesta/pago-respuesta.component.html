@@ -1,0 +1,10 @@
+<div class="container d-block h-50  align-items-center ">
+  <div [ngClass]="respuesta" class="alert p-4  text-center d-block">
+    <div class="iconoRespuesta  display-1" [ngClass]="cadenaClases" [innerHtml]="this.iconoOk">
+    </div>
+    <p>{{textoRespuesta}}</p>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-info " [routerLink]="['/inicio']">Volver a tributos</button>
+  </div>
+</div>

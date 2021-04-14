@@ -34,7 +34,7 @@ export class ResultadosDeudaComponent implements OnInit {
       .then((datos) => this.realizarPago(datos))
       .catch((error) => console.log(error));
   }
-  /** GENERA UN FORM CON LOS DATOS DEL CONTRIBUYENTE QUE 
+  /** GENERA UN FORM CON LOS DATOS DEL CONTRIBUYENTE QUE
    *  DEVUELVE LA API */
   private realizarPago(datos) {
     let form = document.createElement('form');

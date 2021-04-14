@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ResultadosDeudaComponent } from './Components/resultados-deuda/resultados-deuda.component';
 import { BuscarDeudaComponent } from './Form/buscar-deuda/buscar-deuda.component';
 import { FooterComponent } from './templates/footer/footer.component';
+import { PagoRespuestaComponent } from './Components/pago-respuesta/pago-respuesta.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterComponent } from './templates/footer/footer.component';
     CementerioComponent,
     ResultadosDeudaComponent,
     BuscarDeudaComponent,
-    FooterComponent
+    FooterComponent,
+    PagoRespuestaComponent
   ],
   imports: [
     BrowserModule,

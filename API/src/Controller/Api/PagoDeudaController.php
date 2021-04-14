@@ -62,8 +62,8 @@ class PagoDeudaController extends AbstractController
       "monto_operacion"=>$totalSaldo,
       "detalle_operacion" => urlencode(json_encode($detalleOperacion)),
       "detalle_operacion_visible"=> "1",
-      "ok_url" => 'https://postsandbox.epagos.com.ar/tests/ok.php',
-      "error_url" => 'https://postsandbox.epagos.com.ar/tests/error.php'
+      "ok_url" => 'http://127.0.0.1:8000/api/obtenerPago/aprobado',
+      "error_url" => 'http://127.0.0.1:8000/api/obtenerPago/cancelado'
     ];
     return new JsonResponse($datosContribuyente);
   }
