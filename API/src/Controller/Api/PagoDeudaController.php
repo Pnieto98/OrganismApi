@@ -53,10 +53,17 @@ class PagoDeudaController extends AbstractController
     }
     /** Datos para pasarle al form en la UI **/
     $datosContribuyente = [
-      'saldo' => $totalSaldo,
-      'token' => $token,
-      'numero_operacion' => $numeroOperacion,
-      'detalle_operacion' =>urlencode(json_encode($detalleOperacion))
+      "version" => '2.0',
+      "operacion"=>"op_pago",
+      "id_organismo" => '0',
+      "token" => $token,
+      "convenio" => "",
+      "id_moneda_operacion"=>"1",
+      "monto_operacion"=>$totalSaldo,
+      "detalle_operacion" => urlencode(json_encode($detalleOperacion)),
+      "detalle_operacion_visible"=> "1",
+      "ok_url" => 'https://postsandbox.epagos.com.ar/tests/ok.php',
+      "error_url" => 'https://postsandbox.epagos.com.ar/tests/error.php'
     ];
     return new JsonResponse($datosContribuyente);
   }

@@ -17,9 +17,8 @@ export class ResultadosDeudaComponent implements OnInit {
     this.redireccionar = true;
   }
   ngOnInit() {}
-
+  /** EVENTO CHECK PARA AGREGAR LA DEUDA SELECCIONADA A UN ARRAY**/
   eventCheck(obj, $event) {
-    this.deudaSelec.arraySeleccionado;
     this.isChecked = $event.target.checked;
     if (this.isChecked) {
       this.deudaSelec.agregar(obj);
@@ -27,6 +26,7 @@ export class ResultadosDeudaComponent implements OnInit {
       this.deudaSelec.borrar(obj);
     }
   }
+  /** PETICION HTTP A LA API PARA REALIZAR EL PAGO **/
   enviarPago() {
     this.redireccionar = false;
     this.epagosService
@@ -34,34 +34,17 @@ export class ResultadosDeudaComponent implements OnInit {
       .then((datos) => this.realizarPago(datos))
       .catch((error) => console.log(error));
   }
+  /** GENERA UN FORM CON LOS DATOS DEL CONTRIBUYENTE QUE 
+   *  DEVUELVE LA API */
   private realizarPago(datos) {
-    let datosPago = {
-      version: '2.0',
-      operacion: 'op_pago',
-      id_organismo: '0',
-      token: datos.token,
-      convenio: '',
-      numero_operacion: datos.token,
-      id_moneda_operacion: '1',
-      monto_operacion: datos.saldo,
-      detalle_operacion: datos.detalle_operacion,
-      detalle_operacion_visible: '1',
-      ok_url: 'https://postsandbox.epagos.com.ar/tests/ok.php',
-      error_url: 'https://postsandbox.epagos.com.ar/tests/error.php',
-    };
-    this.crearFormulario(datosPago);
-    
-  }
-  private crearFormulario(datosPago){
     let form = document.createElement('form');
     form.method = 'POST';
     form.action = 'https://postsandbox.epagos.com.ar';
-
-    for (const nombre in datosPago) {
+    for (const nombre in datos) {
       let input = document.createElement('input');
       input.type = 'hidden';
       input.name = nombre;
-      input.value = datosPago[nombre];
+      input.value = datos[nombre];
       form.appendChild(input);
     }
     document.body.appendChild(form);
