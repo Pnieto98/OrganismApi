@@ -4,33 +4,39 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-pago-respuesta',
   templateUrl: './pago-respuesta.component.html',
-  styleUrls: ['./pago-respuesta.component.css']
+  styleUrls: ['./pago-respuesta.component.css'],
 })
 export class PagoRespuestaComponent implements OnInit {
-   respuesta: string;
-   cadenaClases: string ;
-   iconoOk: string;
-   textoRespuesta: string;
-   recibo: string;
-  constructor(private ruta: ActivatedRoute) { }
+  respuesta: string;
+  cadenaClases: string;
+  iconoOk: string;
+  textoRespuesta: string;
+  recibo: string;
+  constructor(private ruta: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.ruta.params.subscribe(params =>{
+    this.ruta.params.subscribe((params) => {
       this.mostrarRespuestaPago(params);
-    })
+    });
   }
-  private  mostrarRespuestaPago(params){
-    if(params.respUrl == "acreditado"){
-      this.respuesta = "alert-success";
+  private mostrarRespuestaPago(params) {
+    if (params.respUrl == 'acreditado') {
+      this.respuesta = 'alert-success';
       this.iconoOk = '<i class="far fa-check-circle"></i>';
       this.textoRespuesta = '¡Su pago ha sido acreditado con exito!';
       this.cadenaClases = 'text-success';
-      if(params.recibo){
+      if (params.recibo) {
         this.recibo = atob(params.recibo);
       }
-    }else{
-      this.respuesta = "alert-danger";
-      this.iconoOk = '<i class="fas fa-exclamation-circle"></i>';
+    }else if(params.respUrl == 'pendiente'){
+      this.respuesta = 'alert-warning';
+      this.iconoOk = '<i class="fas fa-exclamation-triangle"></i>';
+      this.textoRespuesta = `Su deuda se ecuentra <strong>pendiente de pago</strong>`;
+      this.cadenaClases = 'text-warning';
+    }
+     else {
+      this.respuesta = 'alert-danger';
+      this.iconoOk = '<i class="fas fa-times"></i>';
       this.textoRespuesta = 'Error al procesar el pago, intente nuevamente.';
       this.cadenaClases = 'text-danger';
     }

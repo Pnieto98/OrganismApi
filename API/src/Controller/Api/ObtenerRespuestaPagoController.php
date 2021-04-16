@@ -35,6 +35,9 @@ class ObtenerRespuestaPagoController extends AbstractController
                 $recibo = base64_encode($this->obtenerReciboPago($respuesta['id_transaccion']));
                 return  $this->redirect("http://localhost:4200/resultadoPago/acreditado/{$recibo}");
             }
+            if($estado == "aprobado" && $respuesta['id_resp'] == "02002"){
+                return  $this->redirect("http://localhost:4200/resultadoPago/pendiente");
+            }
             return $this->redirect("http://localhost:4200/resultadoPago/error");
         } catch (Exception $e) {
             echo "Error: " . $e->getMessage();

@@ -2,7 +2,7 @@
   <div [ngClass]="respuesta" class="alert p-4  text-center d-block">
     <div class="iconoRespuesta  display-1" [ngClass]="cadenaClases" [innerHtml]="this.iconoOk">
     </div>
-    <p>{{textoRespuesta}}</p>
+    <p [innerHtml]="textoRespuesta"></p>
     <a class="btn btn-primary font-weight-bold" *ngIf="recibo != null" download href="{{recibo}}" download>
       Descargar Recibo <i class="fas fa-download"></i>
     </a>

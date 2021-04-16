@@ -59,6 +59,8 @@ class PagoDeudaController extends AbstractController
       "token" => $token,
       "convenio" => "",
       "id_moneda_operacion"=>"1",
+      "opc_pdf" => "1",
+      "opc_descargar_pdf" => "1",
       "monto_operacion"=>$totalSaldo,
       "detalle_operacion" => urlencode(json_encode($detalleOperacion)),
       "detalle_operacion_visible"=> "1",
