@@ -66,7 +66,7 @@ class Comercio
     /**
      * @var \Contribuyentes
      *
-     * @ORM\ManyToOne(targetEntity="Contribuyentes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Contribuyentes", inversedBy="dueda_comercio")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="id_contribuyente", referencedColumnName="id")
      * })
