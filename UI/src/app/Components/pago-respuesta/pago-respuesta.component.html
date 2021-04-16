@@ -3,8 +3,8 @@
     <div class="iconoRespuesta  display-1" [ngClass]="cadenaClases" [innerHtml]="this.iconoOk">
     </div>
     <p>{{textoRespuesta}}</p>
-  </div>
-  <div class="text-center">
-    <button class="btn btn-info " [routerLink]="['/inicio']">Volver a tributos</button>
+    <a class="btn btn-primary font-weight-bold" *ngIf="recibo != null" download href="{{recibo}}" download>
+      Descargar Recibo <i class="fas fa-download"></i>
+    </a>
   </div>
 </div>

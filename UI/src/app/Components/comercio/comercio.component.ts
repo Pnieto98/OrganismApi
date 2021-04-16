@@ -4,7 +4,7 @@ import { ObtenerDeudaService } from 'src/app/Service/api/obtener-deuda.service';
 
 @Component({
   selector: 'app-comercio',
-  templateUrl: './comercio.component.html',
+  templateUrl: './comercio.component.html', 
   styleUrls: ['./comercio.component.css']
 })
 export class ComercioComponent implements OnInit {

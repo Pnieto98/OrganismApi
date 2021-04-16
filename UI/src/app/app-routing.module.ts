@@ -25,6 +25,10 @@ const routes: Routes = [
     component: PagoRespuestaComponent
   },
   {
+    path: 'resultadoPago/:respUrl/:recibo',
+    component: PagoRespuestaComponent
+  },
+  {
     path: '',
     pathMatch: "full",
     component: InicioComponent

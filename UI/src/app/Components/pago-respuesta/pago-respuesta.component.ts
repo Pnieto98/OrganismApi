@@ -11,6 +11,7 @@ export class PagoRespuestaComponent implements OnInit {
    cadenaClases: string ;
    iconoOk: string;
    textoRespuesta: string;
+   recibo: string;
   constructor(private ruta: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -24,6 +25,9 @@ export class PagoRespuestaComponent implements OnInit {
       this.iconoOk = '<i class="far fa-check-circle"></i>';
       this.textoRespuesta = '¡Su pago ha sido acreditado con exito!';
       this.cadenaClases = 'text-success';
+      if(params.recibo){
+        this.recibo = atob(params.recibo);
+      }
     }else{
       this.respuesta = "alert-danger";
       this.iconoOk = '<i class="fas fa-exclamation-circle"></i>';
