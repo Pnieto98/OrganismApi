@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -47,6 +48,7 @@ class Contribuyentes
      * @ORM\OneToMany(targetEntity="App\Entity\Comercio", mappedBy="idContribuyente")
      */
     private $dueda_comercio;
+
     public function __construct()
     {
         $this->dueda_comercio = new ArrayCollection();
@@ -92,6 +94,20 @@ class Contribuyentes
 
         return $this;
     }
-
-
+    /**
+     * 
+     * @return Collection|Comercio[]
+     */
+    public function getComercios(): Collection
+    {
+        return $this->dueda_comercio;
+    }
+    public function getDeudaTributo($tributo)
+    {
+        $arrTipoTributo = null;
+        if ($tributo == "comercio") {
+                $arrTipoTributo =  $this->getComercios();
+        }
+        return $arrTipoTributo;
+    }
 }

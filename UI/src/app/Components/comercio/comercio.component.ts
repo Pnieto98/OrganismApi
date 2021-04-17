@@ -11,8 +11,10 @@ export class ComercioComponent implements OnInit {
   resultadoDatos: any; 
   nroCuenta: number;
   ruta: string;
+  tributo: string;
   constructor(private consultaApi: ObtenerDeudaService, private router: Router) { 
     this.ruta = this.router.url;
+    this.tributo = "comercio";
   }
   ngOnInit(): void {
 

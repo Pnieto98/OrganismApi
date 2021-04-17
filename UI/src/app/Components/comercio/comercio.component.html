@@ -9,7 +9,7 @@
   <p>Accedé a información sobre las tasas de comercio pendientes de pago, en la Ciudad de Buenos Aires.</p>
 </div>
 <!--- FORMULARIO PARA BUSCAR LA DEUDA -->
-<app-buscar-deuda (enviarDatos)="onObtenerResultados($event)"></app-buscar-deuda>
+<app-buscar-deuda (enviarDatos)="onObtenerResultados($event)" [tipoDeuda]="tributo"></app-buscar-deuda>
 <!-- FIN FORMULARIO-->
 
 <!--RESULTADO DE LA DEUDA CARGADA-->

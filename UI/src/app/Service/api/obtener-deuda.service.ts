@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ObtenerDeudaService {
   baseUrl: string  ;
   constructor(private http: HttpClient) {
-    this.baseUrl =  "http://127.0.0.1:8000/api/consulta";
+    this.baseUrl =  "http://127.0.0.1:8000/api/obtenerDeuda";
    }
 
   /* El metodo getDeuda retorna una promesa con la deuda del contribuyente
@@ -18,7 +18,7 @@ export class ObtenerDeudaService {
    */
    getDeuda(tipoTributo, idContribuyente): Observable <any []>
    {
-     return this.http.get<any []>(`${this.baseUrl}/${tipoTributo}/${idContribuyente}`);
+     return this.http.get<any []>(`${this.baseUrl}/${tipoTributo}/doc/${idContribuyente}`);
    }
 
 }

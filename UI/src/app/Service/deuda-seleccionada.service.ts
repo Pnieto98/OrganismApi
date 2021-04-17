@@ -12,12 +12,12 @@ export class DeudaSeleccionadaService {
   }
   agregar(obj: any){
     this.arraySeleccionado.push(obj);
-    this.sumarTotales+=obj.saldo;
+    this.sumarTotales+=obj.monto;
   }
   borrar(obj: any){
     let element = this.arraySeleccionado.indexOf(obj)
     this.arraySeleccionado.splice(element, 1); 
-    this.sumarTotales-=obj.saldo;
+    this.sumarTotales-=obj.monto;
   }
   getSeleccionado(){
     return this.arraySeleccionado;

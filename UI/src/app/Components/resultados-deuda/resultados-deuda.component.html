@@ -4,15 +4,15 @@
     <div class="datos-contribuyente">
       <div class="card-datos d-inline">
         <span>Contribuyente</span>
-        <p class="d-inline">{{resultadoDeuda.deuda[0].nombreContribuyente}}</p>
+        <p class="d-inline">{{resultadoDeuda.contribuyente.nombre}}</p>
       </div>
       <div class="card-datos d-inline">
         <span>Dni</span>
-        <p class="d-inline">{{resultadoDeuda.deuda[0].dni}}</p>
+        <p class="d-inline">{{resultadoDeuda.contribuyente.dni}}</p>
       </div>
       <div class="card-datos d-inline">
-        <span>Cuenta</span>
-        <p class="d-inline">{{resultadoDeuda.deuda[0].cuenta}}</p>
+        <span>email</span>
+        <p class="d-inline">{{resultadoDeuda.contribuyente.email}}</p>
       </div>
     </div>
     <!-- FIN DATOS DEL COTRIBUYENTE -->
@@ -35,8 +35,8 @@
             </td>
             <th scope="row">{{deuda.periodo}}</th>
             <td>{{deuda.descripcion | uppercase}}</td>
-            <td>{{deuda['venicimiento'].date | date}}</td>
-            <td>{{deuda.saldo}}</td>
+            <td>{{deuda.vencimiento}}</td>
+            <td>$ {{deuda.monto}}</td>
           </tr>
         </tbody>
       </table>
@@ -77,7 +77,7 @@
     </div>
   </div>
   <!-- MOSTRAR ALERT AL NO ENCUENTRAR UN NUMERO DE CUENTA -->
-  <div class="alert alert-danger" *ngIf="!resultadoDeuda.message">
+  <div class="alert alert-danger" *ngIf="resultadoDeuda.message == false ">
     Error, no se ha podido encontrar el numero de cuenta ingresado.
   </div>
   <!-- FIN ALERT-->
