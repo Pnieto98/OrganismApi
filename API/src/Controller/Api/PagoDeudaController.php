@@ -46,7 +46,7 @@ class PagoDeudaController extends AbstractController
           $detalleOperacion[] =
             [
               'id_item' => $idItem++,
-              'desc_item' => $deuda->getPeriodo(),
+              'desc_item' => $deuda->getPeriodo()." - ".$deuda->getDescripcion(),
               'monto_item' => $deuda->getSaldo(),
               'cantidad_item' => '1'
             ];
