@@ -57,7 +57,7 @@
             </td>
           <tr *ngIf="deudaSelec.arraySeleccionado.length > 0">
             <td class="text-center">
-              <button (click)="enviarPago()" class="btn btn-warning font-weight-bold  text-uppercase ">
+              <button (click)="enviarPago()" class="btn  text-uppercase ">
                 <div *ngIf="redireccionar == false" class="align-items-center">
                   Redireccionando Epagos
                   <div class="spinner-border text-info" role="status" style="width: 1.5rem; height: 1.5rem;">
@@ -65,8 +65,7 @@
                   </div>
                 </div>
                 <div *ngIf="redireccionar == true">
-                  Pagar
-                  <i class="fas fa-money-bill-wave" *ngIf="redireccionar == true"></i>
+                 <img src="https://i.imgur.com/VLYzRDq.png" alt="" width="160px" height="60px">
                 </div>
               </button>
             </td>
